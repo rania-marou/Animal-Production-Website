@@ -1,0 +1,471 @@
+body {
+	background-image: url(../images/bg_pattern.jpg);
+	font-family: Sans-Serif;
+	margin:0px;
+	padding:0px;
+}
+#header, #content{
+	background-color:#BCD35F;
+	width:865px;
+}
+a img {border: none; }
+
+#header {
+    height: 400px; 
+    position: relative; 
+    background-image: url(../images/horses.jpg);
+    background-position:bottom;
+    margin:20px auto 0px auto;
+    background-repeat:no-repeat;
+    border-top-right-radius:10px; 
+	-moz-border-top-right-radius:10px;
+	-webkit-border-top-right-radius:10px;
+	border-top-left-radius:10px;
+	-moz-box-shadow: inset 0 0 5px #91A540;
+	-webkit-box-shadow: inset 0 0 5px #91A540;
+	box-shadow: inner 0 0 5px #91A540;
+}
+
+#banner{
+	margin: 0px 25px 0px 25px; 
+	padding-bottom:25px; 
+	padding-top:25px;
+	font-size:22px;
+	foat:right;
+	color:#212902;
+	
+}
+
+img.logo{
+	width:70px;
+	height:70px;
+	margin:10px;
+	float:left;
+}
+#menu{
+	margin-top:10px;
+}
+
+#content{
+	margin:0px auto 0px auto;
+	position:relative;	
+	 border-bottom-right-radius:10px; 
+	-moz-border-bottom-right-radius:10px;
+	-webkit-border-bottom-right-radius:10px;
+	border-bottom-left-radius:10px;
+	moz-border-bottom-left-radius:10px;
+	-moz-box-shadow: inset 0 0 5px #91A540;
+	-webkit-box-shadow: inset 0 0 5px #91A540;
+	box-shadow: inner 0 0 5px #91A540;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+}
+
+div.content_box, div.welcome_box, div.link_box, div.announce_box{
+	background:#D9DEB6;
+	border-radius:10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	width:770px;
+	padding:10px;
+	position:relative;
+	margin:20px auto;
+}
+div.content_box h1{
+	color:#222B00; 
+	text-align:left; 
+	font-size: 18px;
+}											
+div.content_box h2{
+	color:#222B00; 
+	text-align:left; 
+	font-size: 16px;
+}
+div.content_box p{
+	color:#222B00; 
+	text-align:justify; 
+	font-size: 14px; 
+	padding: 0 10px;
+}											
+div.welcome_box h1{
+	color:#222B00; 
+	text-align:center; 
+	font-size: 18px;
+}											
+div.welcome_box{
+	width:500px;
+	padding:10px;
+	position:relative;
+	margin-left: 40px;
+}
+
+div.link_box{
+	width:200px;
+	position:relative;
+	border:1px solid #BEC89D;
+	margin-right: 40px;
+	padding: 0 20px 20px;
+	float:right;
+	margin-bottom:20px;
+}
+div.announce_box{
+	width:200px;
+	margin-right: 40px;
+	clear:both;
+	padding: 0 20px 20px;
+	float:right;
+}
+
+#link_box a { 
+	color:#202800;
+	text-decoration:none;
+}
+
+#link_box a:hover, ul.announces a:hover {
+	color:#99B819;
+	font-weight:700;
+	text-shadow: 1px 1px 1px #222B00;
+}
+
+#nav {
+    width:850px;
+	margin:1px auto;
+	text-align:center;
+	padding:auto;
+	list-style:none;
+	
+	}	
+#nav li {
+	float:left; 
+	display:block; 
+	width:150px; 
+	background: #222B00; 
+	position:relative;
+	z-index:500; 
+	margin:0 2px;
+	border-radius:4px 4px 3px 3px;
+	-moz-border-radius: 4px 4px 3px 3px;
+	-webkit-border-radius: 4px 4px 3px 3px;
+	-khtml-border-radius: 4px 4px 3px 3px;
+	border:0px solid #222B00; 
+}
+
+/* this is the parent menu */
+#nav li a {
+	display:block; 
+	padding:10px 5px 10px 5px; 
+	font-weight:700;   
+	text-decoration:none; 
+	text-align:center; 
+	color:#EEF4D7;
+}
+
+#nav li a:hover {
+	color:#BCD35F;
+}
+
+#nav li:hover {
+	border-bottom-right-radius: 0px; 
+	border-bottom-left-radius: 0px;
+}
+#nav a.selected {
+	color:#BCD35F;
+}
+#nav ul {
+	position:absolute; 
+	display:none;  
+	padding:0; 
+	list-style:none;
+}
+
+#nav ul li {
+	width:150px; 
+	margin-left:0px;
+	border-radius:0px;
+	
+}
+#nav ul a {
+	display:block;  
+	height:25px;
+	padding:1px 5px; 
+	color:#AAA3A3;
+	font-size:13px;
+}
+
+#nav ul a:hover {
+	text-decoration:none;
+	border-bottom-right-radius: 0px; 
+	border-bottom-left-radius: 0px;			
+}
+*html #nav ul {
+	margin:0 0 0 -2px;
+}
+
+#footer{
+	margin:0px auto 0px auto;
+	width: 856px;
+	font-size:12px;
+    color:#182800;
+    text-align:center;
+    padding:10px 0px 10px 0px;
+	position:relative;	
+}
+
+#footer a{
+	text-decoration:none;
+	color:#B37400;
+}
+
+#footer a:hover{
+	text-shadow: 1px 1px 1px #6D4700;
+}
+
+/*
+			Load CSS before JavaScript
+		*/
+		
+		/*
+			Slides container
+			Important:
+			Set the width of your slides container
+			Set to display none, prevents content flash
+		*/
+.slides_container {
+	width:470px;
+	display:none;
+}
+
+/*
+	Each slide
+	Important:
+	Set the width of your slides
+	If height not specified height will be set by the slide content
+	Set to display block
+*/
+.slides_container, div.slide {
+	width:750px;
+	height:500px;
+	margin-bottom:20px;
+	display:block;
+}
+
+/*
+	Set the size of your carousel items
+*/
+.item {
+	float:left;
+	width:700px;
+	height:400px;
+	margin:0 50px;
+	background:#D9DEB6;
+}
+.item6 {
+	float:left;
+	width:700px;
+	height:400px;
+	margin:0 50px;
+	background:#D9DEB6;
+}
+
+/*
+	Optional:
+	Reset list default style
+*/
+.pagination {
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+
+/*
+	Optional:
+	Show the current slide in the pagination
+*/
+.pagination .current a {
+	color:red;
+}
+.prev, .next{
+	text-decoration:none;
+	color:#222B00;
+	margin:10px 20px;
+}
+.prev{
+	float:left;
+}
+
+.next{
+	float:right;
+}
+ul.announces{
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+}
+ul.announces a{
+	text-decoration:none; 
+	color:#222B00;
+	font-size:12px;
+}
+ul.announces li{
+	padding-bottom:10px;
+}
+ul.announces li span{
+	color:#222B00;
+	font-size:11px;
+}
+
+.extra_padding {
+	margin: 20px auto;
+	padding: 0;
+	width: 700px;
+}
+.announcement_head, .teacher_head {
+	margin:5px 0px 0px;
+	z-index:1;
+	cursor: pointer;
+	position: relative;
+	background-color:#BCD35F;
+	border-radius:5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+}
+p.headingExpanded{
+	border-bottom-right-radius:0px;
+	-moz-border-bottom-right-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-khtml-border-bottom-right-radius: 0px;
+	border-bottom-left-radius:0px;
+	-moz-border-bottom-left-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-khtml-border-bottom-left-radius: 0px;
+} 
+.announcement_content, .teacher_content {
+	padding: 5px 10px;
+	background-color:#D9DEB6;
+	border:2px solid #BCD35F;
+	border-bottom-right-radius:5px;
+	-moz-border-bottom-right-radius: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	-khtml-border-bottom-right-radius: 5px;
+	border-bottom-left-radius:5px;
+	-moz-border-bottom-left-radius: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+	-khtml-border-bottom-left-radius: 5px;
+	margin-bottom:10px;
+}
+.announcement_content a{
+	text-decoration:none;
+	color:#B37400;
+}
+.teacher_content{
+	position:relative;
+	top:-2px;
+	border-top-right-radius:5px;
+	-moz-border-top-right-radius: 5px;
+	-webkit-border-top-right-radius: 5px;
+	-khtml-border-top-right-radius: 5px;
+}
+.teacher_head {
+	width:220px;
+}
+.teacher_head a{
+	text-decoration:none;
+	color:#222B00;
+}
+.teacher_head:hover {
+	background-color:#A0B744;
+}
+
+.teacher_content table{
+	width:590px;
+	color:#222B00;
+	font-size:12px;
+}
+.teacher_content table a{
+	text-decoration:none;
+	color:#B37400;
+}
+.teacher_image{
+	float: right;
+	width: 80px;
+	height: 80px;
+}
+.teacher_row1{
+	width:120px;
+}
+.teacher_row2{
+	width:160px;
+	text-align:left;
+}
+.teacher_row3{
+	width: 30px;
+	text-align:right;
+}
+.teacher_row4{
+	width:280px;
+	text-align:left;
+}
+
+/* Tiny Scrollbar */
+#scrollbar1 {
+    width: 725px;
+    margin: 20px;
+    border-right: 2px dashed #BCD35F;
+}
+
+#scrollbar1 .viewport {
+    width: 700px;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+}
+
+#scrollbar1 .overview {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#scrollbar1 .scrollbar {
+    background: transparent url(../images/scrollerimg/bg-scrollbar-track-y.png) no-repeat 0 0;
+    position: relative;
+    background-position: 0 0;
+    float: right;
+    width: 15px;
+}
+
+#scrollbar1 .thumb {
+    background: #D9DEB6 url(../images/scrollerimg/bg-scrollbar-thumb-y.png) no-repeat 50% 100%;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 3px;
+}
+
+#scrollbar1 .thumb .end {
+    background: #D9DEB6 url(../images/scrollerimg/bg-scrollbar-thumb-y.png) no-repeat 50% 0;
+    overflow: hidden;
+    height: 5px;
+    width: 25px;
+}
+
+#scrollbar1 .disable {
+    display: none;
+}
+
+.noSelect {
+    user-select: none;
+    -o-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
