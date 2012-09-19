@@ -85,7 +85,7 @@
 								else 
 									echo $xml->$new->descr;
 								if (!empty($xml->$new->attachment)){
-									echo '&nbsp; <p>Επισυναπτόμενο αρχείο:</p><a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; position: relative; top: -45px; right: -175px;" src="../images/clip.png" alt="" /></a>';
+									echo '&nbsp; <p style="padding-left: 420px;">Επισυναπτόμενο αρχείο:</p><a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; position: relative; top: -45px; right: -600px;" src="../images/clip.png" alt="" /></a>';
 								}
 								echo '</div>';
 							}
