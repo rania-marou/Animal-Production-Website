@@ -38,12 +38,15 @@
 						}
 						$i=1;
 						echo '<ul class="announces">';
-						foreach ($xml->channel->item as $item) {
-							echo '<li style=""><a href="department_announce.php?id='.$i.'">'.$item->title.'</a> <span><strong>('.$item->pubDate.')</strong></span></li>';
-							$i++;
-							if ($i==FRONT_PAGE_ANNOUNCEMENTS_NUMBER+1)
-								break;
-						}
+						for ($j=1; $j<=4; $j++){
+							$new="news_".$j;
+							if (isset($xml->$new)) {
+								echo '<li style=""><a href="department_announce.php?id='.$i.'">'.$xml->$new->title.'</a> <span><strong>('.$xml->$new->news_date.')</strong></span></li>';
+								$i++;
+								if ($i==FRONT_PAGE_ANNOUNCEMENTS_NUMBER+1)
+									break;
+							}
+						}	
 						echo '</ul>';
 					?>
 				</p>
