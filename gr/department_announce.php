@@ -58,25 +58,25 @@
 				}
 				
 				/* Orizoume tis sunolikes selides - ceil:stroggulopoiei pros ta panw */
-				$total_pages=ceil(count($xml->channel->item)/ANNOUNCEMENT_PAGINATION);
+				$total_pages=ceil(count($xml)/ANNOUNCEMENT_PAGINATION);
 				
-				$i=1;
-				echo '<div class="extra_padding">';
-				foreach ($xml->channel->item as $item) {
-					/* Analoga to page sto opoio vriskomaste exoume kai to analogo arxi-telos, 
-					 * pou mas dinetai apo pio panw kai twra ektupwnoume ta antistoixa 
-					 * apotelesmata tou page pou vriskomaste */
-					if ($i>=$arxi && $i<=$telos) {
-						echo '<p class="announcement_head" style="padding: 5px 10px; text-align:left;">'.$item->title.'<span><strong> - ('.$item->pubDate.')</strong></span></p>';
-						echo '<div class="announcement_content">';
-						if ($item->description == "")
-							echo '<p>Δε βρέθηκε κείμενο ανακοίνωσης</p>';
-						else 
-							echo $item->description;
-						echo '</div>';
-					}		
-					$i++;
-				}
+					$i=1;
+					echo '<div class="extra_padding">';
+					for ($i=$arxi; $i<=$telos; $i++){
+							$new="news_".$i;
+							if (isset($xml->$new)){
+								echo '<p class="announcement_head" style="padding: 5px 10px; text-align:left;">'.$xml->$new->title.'<span><strong> - ('.$xml->$new->news_date.')</strong></span></p>';
+								echo '<div class="announcement_content">';
+								if ($xml->$new->descr == "")
+									echo '<p>Δε βρέθηκε κείμενο ανακοίνωσης</p>';
+								else 
+									echo $xml->$new->descr;
+								if (!empty($xml->$new->attachment)){
+									echo '&nbsp; <p style="padding-left: 420px;">Επισυναπτόμενο αρχείο:</p><a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; position: relative; top: -45px; right: -600px;" src="../images/clip.png" alt="" /></a>';
+								}
+								echo '</div>';
+							}
+					}
 				
 				/* Selidopoihsh */
 				echo '<table style="margin:20px auto;"><tr><td width="1%">';
