@@ -29,7 +29,7 @@
 					</td>
 					<td >
 							<p style="text-align:left; margin-left: 25px;">
-								<b><u>Στοιχεία Επικοινωνίας Τμήματος:</u></b> <br /><br />		
+								<b><u>Στοιχεία Επικοινωνίας Τμήματος: </u></b> <br /><br />		
 								Προϊσταμένη Τμήματος: <br /> Αναστασία Καμπαμανώλη - Δήμου <br /> Tηλ.: 2410 684384 <br /> <br/ >	
 								Προϊστάμενος Γραμματείας: <br /> B. Καραμήτσιος <br /> Tηλ.: 2410 684292 <br />	<br />
 								Email: <a style="text-decoration:none; color:#B37400;" href="mailto:secry-animal@teilar.gr">secry-animal@teilar.gr</a> <br />	<br /> <br />

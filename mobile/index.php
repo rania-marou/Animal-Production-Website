@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
 		<link href="mobilestyle.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>jQuery Mobile: Theme Download</title>
+		<title>Αρχική σελίδα</title>
 		<link rel="stylesheet" href="themes/ap_theme_2.min.css" />
 		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
 		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -20,13 +19,13 @@
 				<img class="logo" src="logo.png"></a>
 				<h3>Τμήμα Ζωικής Παραγωγής <br /> TEI Λάρισας</h3>	
 				<ul data-role="listview" data-inset="true" data-filter="false">
-					<li><a href="#">Ανακοινώσεις</a></li>
-					<li><a href="#">Εκπαιδευτικοί</a></li>
-					<li><a href="#">Τηλέφωνα</a></li>
-					<li><a href="#">Επικοινωνία</a></li>
-					<li><a href="#">Σύνδεσμοι</a></li>
+					<li><a href="announces.php">Ανακοινώσεις</a></li>
+					<li><a href="teachers.php">Εκπαιδευτικοί</a></li>
+					<li><a href="telephones.php">Τηλέφωνα</a></li>
+					<li><a href="contact.php">Επικοινωνία</a></li>
+					<li><a href="links.php">Σύνδεσμοι</a></li>
 				</ul>
-				<h5>Developed by <a href="mailto:rania.marou@gmail.com">Rania Marou</a></h5>
+				<h5>Προγραμματισμος-Σχεδίαση: <a href="mailto:rania.marou@gmail.com">Ράνια Μάρου</a></h5>
 				</div>
 <!--
 				
