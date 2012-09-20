@@ -19,8 +19,8 @@
 <div id="header">
 		<a href="index.php"><img class="logo" src="../images/logo.png"></a>
 		<a href="#" onClick="changeLanguage('gr/', 'en/');"><img style="float:right; width:25px; padding-top: 65px; padding-right: 5px;" src="../images/flags/enflag.png" /></a>
-		<a href="https://www.facebook.com/ap.teilar"><img style="float:right; width:25px; padding-top: 65px; padding-right: 10px;" src="../images/socialMedia/facebook.png"/></a>
-		<a href="https://twitter.com/AP_TEILarissa"><img style="float:right; width:25px; padding-top: 65px; padding-right: 2px;" src="../images/socialMedia/twitter.png" /></a>
+		<a href="https://www.facebook.com"><img style="float:right; width:25px; padding-top: 65px; padding-right: 10px;" src="../images/socialMedia/facebook.png"/></a>
+		<a href="http://twitter.com"><img style="float:right; width:25px; padding-top: 65px; padding-right: 2px;" src="../images/socialMedia/twitter.png" /></a>
 		<a style="text-decoration:none;" href="index.php"><p id="banner">TΕΙ Λάρισας</br>Τμήμα Ζωικής Παραγωγής</p></a>
 		<div id="menu">
 			<ul id="nav">
