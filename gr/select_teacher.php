@@ -40,7 +40,7 @@
 							continue;
 						}
 						
-						echo '<p class="teacher_head" style="padding: 5px 10px; text-align:left;"><a href="teacher_announce.php?pid='.$xml->person->email.'" >'.$xmlp->person->name.'</a></p>';
+						echo '<li  style="list-style:none;" ><ul><a class="teacher_head" style="padding: 5px 10px; text-align:left;" href="teacher_announce.php?pid='.$xml->person->email.'" >'.$xmlp->person->name.'</a></ul></li>';
 					}
 					echo '</div>';
 				?>		
