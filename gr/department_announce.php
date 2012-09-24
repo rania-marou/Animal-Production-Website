@@ -9,7 +9,6 @@
 	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-	<script type="text/javascript" src="../js/global.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {	
@@ -72,7 +71,7 @@
 								else 
 									echo $xml->$new->descr;
 								if (!empty($xml->$new->attachment)){
-									echo '&nbsp; <p style="padding-left: 420px;">Επισυναπτόμενο αρχείο:</p><a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; position: relative; top: -45px; right: -600px;" src="../images/clip.png" alt="" /></a>';
+									echo '&nbsp; <p style="float: right;">Επισυναπτόμενο αρχείο:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="" /></a></p><div style="clear:both;"></div>';
 								}
 								echo '</div>';
 							}

@@ -8,7 +8,6 @@
 	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-	<script type="text/javascript" src="../js/global.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 	<script type="text/javascript" src="../js/jquery.tinyscrollbar.min.js"></script>
 	<script type="text/javascript">

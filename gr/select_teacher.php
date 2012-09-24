@@ -10,7 +10,6 @@
 	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-	<script type="text/javascript" src="../js/global.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 </head>
 
@@ -29,7 +28,7 @@
 						exit();
 					}
 					$counter = 1;
-					echo '<div class="extra_padding">';
+					echo '<div class="extra_padding"><ul style="list-style:none; padding:0px; margin:0px;" >';
 					foreach ($xml->person as $person_summary){ 
 						$datap = file_get_contents(PERSON_XML_URL.'pid='.$person_summary->email.'&type=p');
 						try {
@@ -40,9 +39,9 @@
 							continue;
 						}
 						
-						echo '<li  style="list-style:none;" ><ul><a class="teacher_head" style="padding: 5px 10px; text-align:left;" href="teacher_announce.php?pid='.$xml->person->email.'" >'.$xmlp->person->name.'</a></ul></li>';
+						echo '<li><a class="teacher_head" style="padding: 5px 10px; display:block; margin-top:3px; " href="teacher_announce.php?pid='.$xml->person->email.'" >'.$xmlp->person->name.'</a></li>';
 					}
-					echo '</div>';
+					echo '</ul></div>';
 				?>		
 		</div>	
 	</div>		

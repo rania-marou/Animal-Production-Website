@@ -10,7 +10,6 @@
 	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
-	<script type="text/javascript" src="../js/global.js"></script>
 	<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function () {	
@@ -67,17 +66,18 @@
 					
 					/* Orizoume tis sunolikes selides - ceil:stroggulopoiei pros ta panw */
 					$total_pages=ceil(count($xml)/ANNOUNCEMENT_PAGINATION);
-				//~ 
-					//~ echo 'blahbla'.count($xml);
-					//~ echo 'arxi'.$arxi;
-					//~ echo 'telos'.$telos;
-					//~ echo 'total'.$total_pages;
-					
+
+					$noannounce=true;
 					$i=1;
 					echo '<div class="extra_padding">';
-					for ($i=$arxi; $i<=$telos; $i++){
+					
+					if (count($xml)==0)
+						echo '<p>Ο εκπαιδευτικός που επιλέξατε δεν έχει ανακοινώσεις.</p>';
+					else {
+						for ($i=$arxi; $i<=$telos; $i++){
 							$new="news_".$i;
 							if (isset($xml->$new)){
+								$noannounce=false;
 								echo '<p class="announcement_head" style="padding: 5px 10px; text-align:left;">'.$xml->$new->title.'<span><strong> - ('.$xml->$new->news_date.')</strong></span></p>';
 								echo '<div class="announcement_content">';
 								if ($xml->$new->descr == "")
@@ -85,32 +85,35 @@
 								else 
 									echo $xml->$new->descr;
 								if (!empty($xml->$new->attachment)){
-									echo '&nbsp; <p style="padding-left: 420px;">Επισυναπτόμενο αρχείο:</p><a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; position: relative; top: -45px; right: -600px;" src="../images/clip.png" alt="" /></a>';
+									echo '&nbsp; <p style="float: right;">Επισυναπτόμενο αρχείο:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="" /></a></p><div style="clear:both;"></div>';
 								}
 								echo '</div>';
 							}
 							else {
-							echo 'Δεν υπάρχουν ανακοινώσεις του εκπαιδευτικού που επιλέξατε.';
-							exit;
-					}
-					}
+								$noannounce=true;
+								break;
+							}
+						}
+
 					
-					/* Selidopoihsh */
-					echo '<table style="margin:20px auto;"><tr><td width="1%">';
-					if ($page>1)
-						echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page-1).'" >Νεότερες ανακοινώσεις</a>';
-					echo '</td><td width="1%" style="text-align:center;">';
-					/* Ektupwsi olwn twn selidwn  */
-					for ($i=1; $i<=$total_pages; $i++){
-						if ($i==$page)
-							echo '<a style="color:#91A540;">'.$i.'</a>';
-						else
-							echo ' <a style="color:#222B00; text-decoration:none;" href="?pid='.$email.'&page='.$i.'">'.$i.'</a> ';
-					}
-					echo '</td><td width="1%" style="text-align:right;">';
-					if ($page<$total_pages)	
-						echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page+1).'" >Παλαιότερες ανακοινώσεις</a>';
-					echo '</td></tr></table></div>';
+						/* Selidopoihsh */
+						echo '<table style="margin:20px auto;"><tr><td width="1%">';
+						if ($page>1)
+							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page-1).'" >Νεότερες ανακοινώσεις</a>';
+						echo '</td><td width="1%" style="text-align:center;">';
+						/* Ektupwsi olwn twn selidwn  */
+						for ($i=1; $i<=$total_pages; $i++){
+							if ($i==$page)
+								echo '<a style="color:#91A540;">'.$i.'</a>';
+							else
+								echo ' <a style="color:#222B00; text-decoration:none;" href="?pid='.$email.'&page='.$i.'">'.$i.'</a> ';
+						}
+						echo '</td><td width="1%" style="text-align:right;">';
+						if ($page<$total_pages)	
+							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page+1).'" >Παλαιότερες ανακοινώσεις</a>';
+						echo '</td></tr></table>';
+					}				
+					echo '</div>';
 				?>		
 		</div>	
 	</div>		

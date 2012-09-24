@@ -2,21 +2,23 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link href="mobilestyle.css" rel="stylesheet" type="text/css" />
+		<link href="css/mobilestyle.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>Εκπαιδευτικοί</title>
-		<link rel="stylesheet" href="themes/ap_theme_2.min.css" />
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.1/jquery.mobile.structure-1.1.1.min.css" />
-		<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+		<link rel="stylesheet" href="css/ap_theme_2.min.css" />
+		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.min.css" />
+		<script src="js/jquery-1.7.1.min.js"></script>
+		<script src="js/jquery.mobile-1.1.1.min.js"></script>
 	</head>
 	<body>
 		<div data-role="page" data-theme="a">
 			<div data-role="header" data-position="inline" data-add-back-btn="true">
-				<a href="announces.php" data-role="button" data-icon="back">Πίσω</a>
+				<a href="index.php" data-role="button" data-icon="back">Πίσω</a>
 				<h1>Εκπαιδευτικοί</h1>
+				<a href="index.php" data-role="button" data-iconpos="notext" data-icon="home"></a>
 			</div>
 			<div data-role="content">	
+			<?php include('header.php');?>
 				<?php 
 					$data = file_get_contents("person_summary.xml");
 					try {
@@ -27,7 +29,7 @@
 						exit();
 					}
 					$counter = 1;
-					echo '<div class="extra_padding">';
+					echo '<div data-role="collapsible-set">';
 					foreach ($xml->person as $person_summary){ 
 						$datap = file_get_contents("http://www.teilar.gr/person_xml.php?".'pid='.$person_summary->email.'&type=p');
 						$datao = file_get_contents("http://www.teilar.gr/person_xml.php?".'pid='.$person_summary->email.'&type=o');
@@ -40,8 +42,10 @@
 							continue;
 						}
 						
-						echo '<p><b>'.$xmlp->person->name.'</b></p>';
-						echo '<div>';
+						
+
+						echo '<div data-role="collapsible" data-collapsed="true" data-collapsed-icon="arrow-r" data-expanded-icon="arrow-d">';
+						echo '<h3>'.$xmlp->person->name.'</h3>';
 						echo '			<table>';
 						echo '				<tr>';
 						echo '					<td>Τηλέφωνο:</td>';
@@ -73,17 +77,17 @@
 						
 						echo '					</td>';
 						echo '				</tr>';
-						//~ echo '				<tr>';
-						//~ echo '					<td colspan="4"><a href="teacher_announce.php?pid='.$xmlp->person->email.'" >Ανακοινώσεις εκπαιδευτικού</a>';
-						//~ echo '					</td>';
-						//~ echo '				</tr>';
+						echo '				<tr>';
+						echo '					<td colspan="4"><a href="teacher_announces.php?pid='.$xmlp->person->email.'" >Ανακοινώσεις εκπαιδευτικού</a>';
+						echo '					</td>';
+						echo '				</tr>';
 						echo '			</table>';
-						echo '<div style="clear:both;"></div>';
+						
 						echo '</div>';
 					}
 					echo '</div>';
 				?>
-				<h5>Προγραμματισμος-Σχεδίαση: <a href="mailto:rania.marou@gmail.com">Ράνια Μάρου</a></h5>
+				<?php include('footer.php');?>
 				</div>
 		</div>
 	</body>

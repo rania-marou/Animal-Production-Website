@@ -113,6 +113,7 @@ div.link_box{
 div.announce_box{
 	width:200px;
 	margin-right: 40px;
+	margin-top: 0px;
 	clear:both;
 	padding: 0 20px 20px;
 	float:right;
@@ -166,7 +167,7 @@ div.announce_box{
 	color:#BCD35F;
 }
 
-#nav li:hover {
+#nav li.noBorderRadius:hover {
 	border-bottom-right-radius: 0px; 
 	border-bottom-left-radius: 0px;
 }
@@ -195,9 +196,7 @@ div.announce_box{
 }
 
 #nav ul a:hover {
-	text-decoration:none;
-	border-bottom-right-radius: 0px; 
-	border-bottom-left-radius: 0px;			
+	text-decoration:none;		
 }
 *html #nav ul {
 	margin:0 0 0 -2px;
@@ -368,10 +367,8 @@ p.headingExpanded{
 	-webkit-border-top-right-radius: 5px;
 	-khtml-border-top-right-radius: 5px;
 }
-.teacher_head {
-	width:220px;
-}
 .teacher_head{
+	width:250px;
 	text-decoration:none;
 	color:#222B00;
 }
