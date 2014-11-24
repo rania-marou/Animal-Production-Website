@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	
 <head>
-	<title>Ανακοινώσεις Εκπαιδευτικού</title>
+	<title>Teacher Announcements</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" href="../fav.ico" type="image/x-icon"/> 
-	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon"/>
+	<link rel="icon" href="../fav.ico" type="image/x-icon"> 
+	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -34,11 +34,11 @@
 	<?php include('header.php'); ?>
 	<div id="content">
 		<div id="teachers" class="content_box">
-			<h1>Ανακοινώσεις Εκπαιδευτικού</h1>
+			<h1>Teacher Announcements</h1>
 			<?php 
 			
 					if (!isset($_GET['pid'])){
-							echo 'Δεν έχετε επιλέξει εκπαιδευτικό';
+							echo 'you had not select a teacher';
 							exit;
 					}
 					
@@ -72,7 +72,7 @@
 					echo '<div class="extra_padding">';
 					
 					if (count($xml)==0)
-						echo '<p>Ο εκπαιδευτικός που επιλέξατε δεν έχει ανακοινώσεις.</p>';
+						echo '<p>The teacher you selected has no announcements.</p>';
 					else {
 						for ($i=$arxi; $i<=$telos; $i++){
 							$new="news_".$i;
@@ -81,11 +81,11 @@
 								echo '<p class="announcement_head" style="padding: 5px 10px; text-align:left;">'.$xml->$new->title.'<span><strong> - ('.$xml->$new->news_date.')</strong></span></p>';
 								echo '<div class="announcement_content">';
 								if ($xml->$new->descr == "")
-									echo '<p>Δε βρέθηκε κείμενο ανακοίνωσης</p>';
+									echo '<p>Description not found.</p>';
 								else 
 									echo $xml->$new->descr;
 								if (!empty($xml->$new->attachment)){
-									echo '&nbsp; <p style="float: right;">Επισυναπτόμενο αρχείο:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="clip" /></a></p><div style="clear:both;"></div>';
+									echo '&nbsp; <p style="float: right;">Attachment:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="clip" /></a></p><div style="clear:both;"></div>';
 								}
 								echo '</div>';
 							}
@@ -99,7 +99,7 @@
 						/* Selidopoihsh */
 						echo '<table style="margin:20px auto;"><tr><td width="1%">';
 						if ($page>1)
-							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page-1).'" >Νεότερες ανακοινώσεις</a>';
+							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page-1).'" >Newer Announcements</a>';
 						echo '</td><td width="1%" style="text-align:center;">';
 						/* Ektupwsi olwn twn selidwn  */
 						for ($i=1; $i<=$total_pages; $i++){
@@ -110,7 +110,7 @@
 						}
 						echo '</td><td width="1%" style="text-align:right;">';
 						if ($page<$total_pages)	
-							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page+1).'" >Παλαιότερες ανακοινώσεις</a>';
+							echo '<a style="text-decoration:none; color:#222B00;" href="?pid='.$email.'&page='.($page+1).'" >Older Announcements</a>';
 						echo '</td></tr></table>';
 					}				
 					echo '</div>';

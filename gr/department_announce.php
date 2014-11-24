@@ -5,8 +5,8 @@
 <head>
 	<title>Ανακοινώσεις Τμήματος</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" href="../fav.ico" type="image/x-icon"> 
-	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
+	<link rel="icon" href="../fav.ico" type="image/x-icon"/> 
+	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -51,11 +51,15 @@
 				try {
 					$xml = new SimpleXMLElement($data);
 				} catch (Exception $e) {
-					echo "<p>Μη έγκυρο xml αρχείο</p>";
-					echo $e;
-					exit();
+					//~ echo "<p>Μη έγκυρο xml αρχείο</p>";
+					//~ echo $e;
+					//~ exit();
+					$xml = null;
 				}
 				
+			if (count($xml)==0 || $xml == null)
+				echo '<p>Δε βρέθηκαν ανακοινώσεις.</p>';
+			else {
 				/* Orizoume tis sunolikes selides - ceil:stroggulopoiei pros ta panw */
 				$total_pages=ceil(count($xml)/ANNOUNCEMENT_PAGINATION);
 				
@@ -71,7 +75,7 @@
 								else 
 									echo $xml->$new->descr;
 								if (!empty($xml->$new->attachment)){
-									echo '&nbsp; <p style="float: right;">Επισυναπτόμενο αρχείο:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="" /></a></p><div style="clear:both;"></div>';
+									echo '&nbsp; <p style="float: right;">Επισυναπτόμενο αρχείο:<a href="'.$xml->$new->attachment.'"><img style="width: 50px; height: 50px; z-index: 1; margin: 10px;vertical-align: middle;" src="../images/clip.png" alt="" alt="clip"/></a></p><div style="clear:both;"></div>';
 								}
 								echo '</div>';
 							}
@@ -94,6 +98,7 @@
 				if ($page<$total_pages)	
 					echo '<a style="text-decoration:none; color:#222B00;" href="?page='.($page+1).'" >Παλαιότερες ανακοινώσεις</a>';
 				echo '</td></tr></table></div>';
+			}
 			?>
 		</div>	
 	</div>		

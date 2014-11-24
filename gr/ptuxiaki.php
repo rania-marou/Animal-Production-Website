@@ -4,8 +4,8 @@
 <head>
 	<title>Πτυχιακή Εργασία</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" href="../fav.ico" type="image/x-icon"> 
-	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
+	<link rel="icon" href="../fav.ico" type="image/x-icon"/> 
+	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>

@@ -27,33 +27,28 @@ a img {border: none; }
 }
 
 #banner {
-	margin: 0px 25px 0px 25px;
-	padding-bottom: 30px;
-	padding-top: 20px;
-	font-size: 22px;
-	float: left;
-	color: #212902;
-	width: 400px;
+margin: 0px 25px 0px 25px;
+padding-bottom: 30px;
+padding-top: 20px;
+font-size: 22px;
+float: left;
+color: #212902;
+width: 400px;
 }
 
 #banner a{
 	text-decoration: none;
 	color: #212902;
 }
-.beta {
-	position:absolute;
-	top: 0px;
-	right: 10px;
-	font-size: 11px;
-}
+
 img.logo {
-	width: 70px;
-	height: 70px;
-	margin: 0px;
-	float: left;
-	position: relative;
-	top: -10px;
-	left: -10px;
+width: 70px;
+height: 70px;
+margin: 0px;
+float: left;
+position: relative;
+top: -10px;
+left: -10px;
 }
 #menu{
 	margin-top:10px;
@@ -76,7 +71,6 @@ img.logo {
 }
 
 div.content_box, div.welcome_box, div.link_box, div.announce_box{
-	behavior: url(../css/PIE.htc);
 	background:#D9DEB6;
 	border-radius:10px;
 	-moz-border-radius: 10px;
@@ -116,11 +110,11 @@ div.welcome_box{
 }
 
 div.link_box{
-	padding: 10px 20px 20px;
 	width:200px;
 	position:relative;
 	border:1px solid #BEC89D;
 	margin-right: 40px;
+	padding: 0 20px 20px;
 	float:right;
 	margin-bottom:20px;
 }
@@ -128,8 +122,8 @@ div.announce_box{
 	width:200px;
 	margin-right: 40px;
 	margin-top: 0px;
-	clear:both; 
-	padding: 10px 20px 20px;
+	clear:both;
+	padding: 0 20px 20px;
 	float:right;
 }
 
@@ -140,25 +134,21 @@ div.announce_box{
 
 #link_box a:hover, ul.announces a:hover {
 	color:#99B819;
-/*
 	font-weight:700;
 	text-shadow: 1px 1px 1px #222B00;
-*/
 }
 
 #nav {
-    width:900px;
-	margin:1px 0 0 15px;
-	text-align:center;
+    width:850px;
+	margin:1px auto;
+	text-align:cent
 	list-style:none;
-	padding: 0px;
 	
 	}	
 #nav li {
-	behavior: url(../css/PIE.htc);
 	float:left; 
 	display:block; 
-	width:135px; 
+	width:150px; 
 	background: #222B00; 
 	position:relative;
 	z-index:500; 
@@ -192,16 +182,14 @@ div.announce_box{
 	color:#BCD35F;
 }
 #nav ul {
-    left:0px;
-    margin:0px;
 	position:absolute; 
 	display:none;  
-	padding:0px; 
+	padding:0; 
 	list-style:none;
 }
 
 #nav ul li {
-	width:135px; 
+	width:150px; 
 	margin-left:0px;
 	border-radius:0px;
 	
@@ -361,8 +349,6 @@ p.headingExpanded{
 	-khtml-border-bottom-left-radius: 0px;
 } 
 .announcement_content, .teacher_content {
-	zoom:1; 
-	overflow: hidden;
 	padding: 5px 10px;
 	background-color:#D9DEB6;
 	border:2px solid #BCD35F;

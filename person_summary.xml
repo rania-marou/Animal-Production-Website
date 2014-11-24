@@ -1,6 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
   <person>
+    <email>Spyrou@teilar.gr</email>
+    <ann_number />
+    <date_last_post />
+  </person>	
+    <person>
+    <email>gmichail@teilar.gr</email>
+    <ann_number />
+    <date_last_post />
+  </person>
+  <person>
+    <email>tzimas@teilar.gr</email>
+    <ann_number />
+    <date_last_post />
+  </person>
+  <person>
     <email>moulas@teilar.gr</email>
     <ann_number>1</ann_number>
     <date_last_post>2010-10-29</date_last_post>
@@ -31,21 +46,6 @@
     <date_last_post />
   </person>
   <person>
-    <email>gmichail@teilar.gr</email>
-    <ann_number />
-    <date_last_post />
-  </person>
-  <person>
-    <email>bakasi@teilar.gr</email>
-    <ann_number />
-    <date_last_post />
-  </person>
-  <person>
-    <email>tzimas@teilar.gr</email>
-    <ann_number />
-    <date_last_post />
-  </person>
-  <person>
     <email>dkantas@teilar.gr</email>
     <ann_number />
     <date_last_post />
@@ -56,17 +56,7 @@
     <date_last_post />
   </person>
   <person>
-    <email>Spyrou@teilar.gr</email>
-    <ann_number />
-    <date_last_post />
-  </person>
-  <person>
-    <email>tsafouli@teilar.gr</email>
-    <ann_number />
-    <date_last_post />
-  </person>
-  <person>
-    <email>sarli.z@teilar.gr</email>
+    <email>zoulfos@teilar.gr</email>
     <ann_number />
     <date_last_post />
   </person>

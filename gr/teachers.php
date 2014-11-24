@@ -6,8 +6,8 @@
 <head>
 	<title>Εκπαιδευτικοί Τμήματος</title>
 	<link href="../css/style.css" rel="stylesheet" type="text/css" />
-	<link rel="icon" href="../fav.ico" type="image/x-icon"> 
-	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
+	<link rel="icon" href="../fav.ico" type="image/x-icon"/> 
+	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon"/>
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -35,17 +35,25 @@
 		<div id="teachers" class="content_box">
 			<h1>Εκπαιδευτικοί Τμήματος</h1>				
 				<?php 
+					$categories = array();
+					$persons = array();
 					$data = file_get_contents(PERSON_SUMMARY_XML_URL);
 					try {
 						$xml = new SimpleXMLElement($data);
 					} catch (Exception $e) {
-						echo "<p>Μη έγκυρο xml αρχείο</p>";
-						echo $e;
-						exit();
+						//~ echo "<p>Μη έγκυρο xml αρχείο</p>";
+						//~ echo $e;
+						//~ exit();
+						$xml = null;
 					}
+					
+				if (count($xml)==0 || $xml == null)
+					echo '<p>Δε βρέθηκαν εκπαιδευτικοί</p>';
+				else {
 					$counter = 1;
-					echo '<div class="extra_padding">';
+					
 					foreach ($xml->person as $person_summary){ 
+						$person = array();
 						$datap = file_get_contents(PERSON_XML_URL.'pid='.$person_summary->email.'&type=p');
 						$datao = file_get_contents(PERSON_XML_URL.'pid='.$person_summary->email.'&type=o');
 						try {
@@ -56,25 +64,13 @@
 							//~ echo $e;
 							continue;
 						}
-						
-						echo '<p class="teacher_head" style="padding: 5px 10px; text-align:left;">'.$xmlp->person->name.'</p>';
-						echo '<div class="teacher_content">';
-						echo '<img class="teacher_image" src="'.(!empty($xmlp->person->image) ? $xmlp->person->image : '../images/profile.png').'" alt="" />';
-						echo '			<table>';
-						echo '				<tr>';
-						echo '					<td class="teacher_row1" ><strong>Τηλέφωνο:</strong></td>';
-						echo '					<td class="teacher_row2" >'.(!empty($xmlp->person->telephone) ? $xmlp->person->telephone : '-').'</td>';
-						echo '					<td class="teacher_row3"><strong>Fax:</strong></td>';
-						echo '					<td class="teacher_row4">'.(!empty($xmlp->person->fax)  ? $xmlp->person->fax: '-').'</td>';
-						echo '				</tr>';
-						echo '				<tr>';
-						echo '					<td class="teacher_row1" ><strong>E-mail:</strong></td>';
-						echo '					<td class="teacher_row2" ><a href="mailto:'.$xmlp->person->email.'">'.$xmlp->person->email.'</a></td>';
-						echo '					<td class="teacher_row3"><strong>Site:</strong></td>';
-						echo '					<td class="teacher_row4" >'.(!empty($xmlp->person->site) ? '<a href="'.$xmlp->person->site.'">'.$xmlp->person->site.'</a>': '-' ).'</td>';
-						echo '				</tr>';
-						echo '				<tr>';
-						echo '					<td class="teacher_row1" ><strong>Ώρες Επικοινωνίας:</strong></td><td colspan="3" >';
+						$person['category'] = (string) $xmlp->person->category;
+						$person['name'] = (string) $xmlp->person->name;
+						$person['image'] = (string) $xmlp->person->image;
+						$person['telephone'] = (string) $xmlp->person->telephone;
+						$person['fax'] = (string) $xmlp->person->fax;
+						$person['email'] = (string) $xmlp->person->email;
+						$person['site'] = (string) $xmlp->person->site;
 						
 						$epik = "";
 						for ($i=0; $i<5; $i++){
@@ -83,26 +79,53 @@
 								$epik .= $xmlo->$date->imera.', '.$xmlo->$date->ores.', '.$xmlo->$date->meros.' <br />';
 							}
 						}
-						echo (($epik == "") ? '-' : $epik);
+						if ($epik == "") $epik = '-';
 						
-						echo '					</td>';
-						echo '				</tr>';
-						echo '				<tr>';
-						echo '					<td colspan="4"><a href="teacher_announce.php?pid='.$xmlp->person->email.'" >Ανακοινώσεις εκπαιδευτικού</a>';
-						echo '					</td>';
-						echo '				</tr>';
-						
-						//~ echo '				<tr>';
-						//~ echo '					<td>Αντικείμενο:</td><td>'.$xmlp->person->antikeimeno.'</td>';
-						//~ echo '				</tr>';
-						//~ echo '				<tr>';
-						//~ echo '					<td>Σύντομο βιογραφικό:</td><td>'.$xmlp->person->short_cv.'</td>';
-						//~ echo '				</tr>';
-						echo '			</table>';
-						echo '<div style="clear:both;"></div>';
-						echo '</div>';
+						$person['epik'] = $epik;
+						$categories[] = (string) $xmlp->person->category;
+						$persons[] = $person;
+					}
+					
+					$categories = array_unique($categories);
+					
+					echo '<div class="extra_padding">';
+					foreach ($categories as $categorykey => $categoryname){
+						echo '<p><strong>'.$categoryname.'</strong></p>';
+						foreach ($persons as $person){
+							if ($person['category'] == $categoryname) {
+								echo '<p class="teacher_head" style="padding: 5px 10px; text-align:left;">'.$person['name'].'</p>';
+								echo '<div class="teacher_content">';
+								echo '<img class="teacher_image" src="'.(!empty($person['image']) ? $person['image'] : '../images/profile.png').'" alt="image" />';
+								echo '			<table>';
+								echo '				<tr>';
+								echo '					<td class="teacher_row1" ><strong>Τηλέφωνο:</strong></td>';
+								echo '					<td class="teacher_row2" >'.(!empty($person['telephone']) ? $person['telephone'] : ' - ').'</td>';
+								echo '					<td class="teacher_row3"><strong>Fax: </strong></td>';
+								echo '					<td class="teacher_row4">'.(!empty($person['fax'])  ? $person['fax']: ' - ').'</td>';
+								echo '				</tr>';
+								echo '				<tr>';
+								echo '					<td class="teacher_row1" ><strong>E-mail:</strong></td>';
+								echo '					<td class="teacher_row2" ><a href="mailto:'.$person['email'].'">'.$person['email'].'</a></td>';
+								echo '					<td class="teacher_row3"><strong>Site: </strong></td>';
+								echo '					<td class="teacher_row4" >'.(!empty($person['site']) ? '<a href="'.$person['site'].'">'.$person['site'].'</a>': ' - ' ).'</td>';
+								echo '				</tr>';
+								echo '				<tr>';
+								echo '					<td class="teacher_row1" ><strong>Ώρες Επικοινωνίας:</strong></td><td colspan="3" >';
+								echo '						'.$epik;
+								echo '					</td>';
+								echo '				</tr>';
+								echo '				<tr>';
+								echo '					<td colspan="4"><a href="teacher_announce.php?pid='.$person['email'].'" >Ανακοινώσεις εκπαιδευτικού</a>';
+								echo '					</td>';
+								echo '				</tr>';
+								echo '			</table>';
+								echo '<div style="clear:both;"></div>';
+								echo '</div>';
+							}
+						}
 					}
 					echo '</div>';
+				} //else
 				?>
 				
 		</div>

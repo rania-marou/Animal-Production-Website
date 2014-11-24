@@ -1,22 +1,3 @@
-/*
-* Slides, A Slideshow Plugin for jQuery
-* Intructions: http://slidesjs.com
-* By: Nathan Searles, http://nathansearles.com
-* Version: 1.1.9
-* Updated: September 5th, 2011
-*
-* Licensed under the Apache License, Version 2.0 (the "License");
-* you may not use this file except in compliance with the License.
-* You may obtain a copy of the License at
-*
-* http://www.apache.org/licenses/LICENSE-2.0
-*
-* Unless required by applicable law or agreed to in writing, software
-* distributed under the License is distributed on an "AS IS" BASIS,
-* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-* See the License for the specific language governing permissions and
-* limitations under the License.
-*/
 (function (a) {
     a.fn.slides = function (b) {
         return b = a.extend({}, a.fn.slides.option, b), this.each(function () {
@@ -166,21 +147,11 @@
                 x()
             }), d.bind("mouseleave", function () {
                 y()
-            })), b.generateNextPrev && (a("." + b.container, c).after('<a href="#" class="' + b.prev + '">Prev</a>'), a("." + b.prev, c).after('<a href="#" class="' + b.next + '">Next</a>')), a("." + b.next, c).click(function (a) {
+            })), b.generateNextPrev && (a("." + b.container, c).after('<a href="#" class="' + b.prev + '">Previous Semester</a>'), a("." + b.prev, c).after('<a href="#" class="' + b.next + '">Next Semester</a>')), a("." + b.next, c).click(function (a) {
                 a.preventDefault(), b.play && y(), w("next", i)
             }), a("." + b.prev, c).click(function (a) {
                 a.preventDefault(), b.play && y(), w("prev", i)
-            }), b.generatePagination ? (b.prependPagination ? c.prepend("<ul class=" + b.paginationClass + "></ul>") : c.append("<ul class=" + b.paginationClass + "></ul>"), d.children().each(function () {
-                a("." + b.paginationClass, c).append('<li><a href="#' + m + '">' + (m + 1) + "</a></li>"), m++
-            })) : a("." + b.paginationClass + " li a", c).each(function () {
-                a(this).attr("href", "#" + m), m++
-            }), a("." + b.paginationClass + " li:eq(" + h + ")", c).addClass(b.currentClass), a("." + b.paginationClass + " li a", c).click(function () {
-                return b.play && y(), q = a(this).attr("href").match("[^#/]+$"), n != q && w("pagination", j, q), !1
-            }), a("a.link", c).click(function () {
-                return b.play && y(), q = a(this).attr("href").match("[^#/]+$") - 1, n != q && w("pagination", j, q), !1
-            }), b.play && (v = setInterval(function () {
-                w("next", i)
-            }, b.play), c.data("interval", v))
+            })
         })
     }, a.fn.slides.option = {
         preload: !1,

@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<link href="css/mobilestyle.css" rel="stylesheet" type="text/css" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Σύνδεσμοι</title>
+		<title>Επικοινωνία</title>
 		<link rel="stylesheet" href="css/ap_theme_2.min.css" />
 		<link rel="stylesheet" href="css/jquery.mobile.structure-1.1.1.min.css" />
 		<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=places"></script> 
@@ -46,7 +46,7 @@
 				<p style="text-align:center; margin-top: 25px;">
 					<b><u>Στοιχεία Επικοινωνίας Τμήματος:</u></b> <br /><br />		
 					Προϊσταμένη Τμήματος: <br /> Αναστασία Καμπαμανώλη - Δήμου <br /> Tηλ.: 2410 684384 <br /> <br/ >	
-					Προϊστάμενος Γραμματείας: <br /> B. Καραμήτσιος <br /> Tηλ.: 2410 684292 <br />	<br />
+					Προϊστάμενος Γραμματείας: <br /> Γ. Χαλκιάς <br /> Tηλ.: 2410 684292 <br />	<br />
 					Email: <a href="mailto:secry-animal@teilar.gr">secry-animal@teilar.gr</a> <br />	<br /> <br />
 					<b><u>Στοιχεία Επικοινωνίας Μητρώου Σπουδαστών:</u></b> <br /> <br /> 
 					Γραμματεία:2410 684600 <br />

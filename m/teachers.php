@@ -1,3 +1,5 @@
+<?php include('../config.php'); ?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,7 +22,7 @@
 			<div data-role="content">	
 			<?php include('header.php');?>
 				<?php 
-					$data = file_get_contents("person_summary.xml");
+					$data = file_get_contents(PERSON_SUMMARY_XML_URL);
 					try {
 						$xml = new SimpleXMLElement($data);
 					} catch (Exception $e) {

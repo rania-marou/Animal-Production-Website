@@ -4,10 +4,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 	
 <head>
-	<title>Τμήμα Ζωικής Παραγωγής</title>
-	<link href="../css/style.css" rel="stylesheet" type="text/css"/>
-	<link rel="icon" href="../fav.ico" type="image/x-icon"/> 
-	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon"/>
+	<title style= "font-size: 20px;">Department of Animal Production</title>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<link rel="icon" href="../fav.ico" type="image/x-icon"> 
+	<link rel="shortcut icon" href="../fav.ico" type="image/x-icon">
 	<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
 	<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
 	<script type="text/javascript" src="../js/jquery.js"></script>
@@ -24,19 +24,19 @@
 	<?php include('header.php'); ?>
 	<div id="content">
 			<div id="link_box" class="link_box">
-				<h4 style="padding-left:20px;">Χρήσιμοι Σύνδεμοι</h4>
+				<h4 style="padding-left:20px;">Links</h4>
 				<ul style="list-style: none;padding-left: 0px;">
-					<li><a href="http://www.teilar.gr/">ΤΕΙ Λάρισας</a></li>
-					<li><a href="https://dionysos.teilar.gr/Menu/steg/zwikis%20paragwgis.html">e-Γραμματεία</a></li>
-					<li><a href="http://eudoxus.gr/">Εύδοξος</a></li>
-					<li><a href="http://openclass.teilar.gr/">Πλατφόρμα e-class</a></li>
+					<li><a href="http://www.teilar.gr/index_en.php">TEI of Larissa</a></li>
+					<li><a href="https://dionysos.teilar.gr/unistudent/?lang=en-us">e-University - Dionysos</a></li>
+					<li><a href="http://eudoxus.gr/">Eudoxus</a></li>
+					<li><a href="http://e-class.teilar.gr/index.php?localize=en">Open e-class</a></li>
 				</ul>
 			</div>
 			<div id="announce" class="announce_box">
-				<h4 style="text-align:center;">Τελευταίες ανακοινώσεις</h4>
+				<h4 style="text-align:center;">Latest announcements</h4>
 				<p>
 					<?php 
-						$data = file_get_contents(DEPARTMENT_ANNOUNCEMENTS_XML_URL);
+						$data = file_get_contents(DEPARTMENT_ANNOUNCEMENTS_XML_URL_EN);
 						try {
 							$xml = new SimpleXMLElement($data);
 						} catch (Exception $e) {
@@ -46,28 +46,28 @@
 							$xml = null;
 						}
 						
-					if (count($xml)==0 || $xml == null)
-						echo '<p>Δε βρέθηκαν ανακοινώσεις.</p>';
-					else {
-						$i=1;
-						echo '<ul class="announces">';
-						for ($j=1; $j<=4; $j++){
-							$new="news_".$j;
-							if (isset($xml->$new)) {
-								echo '<li style=""><a href="department_announce.php?id='.$i.'">'.$xml->$new->title.'</a> <span><strong>('.$xml->$new->news_date.')</strong></span></li>';
-								$i++;
-								if ($i==FRONT_PAGE_ANNOUNCEMENTS_NUMBER+1)
-									break;
-							}
+						if (count($xml)==0 || $xml == null)
+							echo '<p>There are no announcements in english.</p>';
+						else {
+							$i=1;
+							echo '<ul class="announces">';
+							for ($j=1; $j<=4; $j++){
+								$new="news_".$j;
+								if (isset($xml->$new)) {
+									echo '<li style=""><a href="department_announce.php?id='.$i.'">'.$xml->$new->title.'</a> <span><strong>('.$xml->$new->news_date.')</strong></span></li>';
+									$i++;
+									if ($i==FRONT_PAGE_ANNOUNCEMENTS_NUMBER+1)
+										break;
+								}
+							}	
+							echo '</ul>';
 						}	
-						echo '</ul>';
-					}
 					?>
 				</p>
 			</div>
 			<div id="welcome" class="welcome_box">
-				<h1>Καλώς ήλθατε<br/>στην ιστοσελίδα του τμήματος</h1>
-				<p style="text-align:justify; font-size: 14px; padding: 0 10px; line-height: 1.7;"><br/>Το τμήμα Ζωικής Παραγωγής ιδρύθηκε το 1973 ξεκινώντας ως σχολή ΚΑΤΕΕ. Από το 1983 αποτελεί Τμήμα του Τεχνολογικού Εκπαιδευτικού Ιδρύματος Λάρισας. <br/><br/> Το περιεχόμενο σπουδών του Τμήματος Ζωικής Παραγωγής καλύπτει το γνωστικό αντικείμενο της Επιστήμης των Ζώων και συναφών κλάδων, με έμφαση στην εφαρμογή σύγχρονων τεχνολογικών μεθόδων στην εκτροφή, διατροφή, βελτίωση, αναπαραγωγή και υγεία των αγροτικών ζώων, ζώων συντροφιάς, εξωτικών ζώων και πειραματόζωων. <br /> <br />Η διάρκεια των σπουδών  είναι 8 (οκτώ) εξάμηνα, συμπεριλαμβανομένης και της πρακτικής άσκησης. Σε όλα τα εξάμηνα, εκτός του τελευταίου, οι σπουδές περιλαμβάνουν θεωρητική διδασκαλία, εργαστηριακές ασκήσεις και φροντιστήριο (ασκήσεις πράξης) καθώς και την  εκπόνηση  εργασιών. Το τελευταίο εξάμηνο είναι αφιερωμένο στην πρακτική άσκηση του φοιτητή και την εκπόνηση της πτυχιακής εργασίας.</p>
+				<h1>Welcome to the <br/>Department of Animal Production website</h1>
+				<p style="text-align:justify; font-size: 14px; padding: 0 10px; line-height: 1.7;"><br/>The department of Animal Production was established in 1973 starting as a school per year. Since 1983, it’s a Department of the Technological Educational Institute of Larissa. <br/> <br/> The curriculum of the Department of Animal Production covers the subject of animal sciences and related disciplines, with emphasis on the application of modern technological methods in breeding, nutrition, improvement, reproduction and health of farm animals, pets , exotic animals and laboratory animals. <br /> <br /> The duration of studies is 8 (eight) semesters, including internships. In all semesters, except the final, the studies includes theoretical teaching, laboratory and tutorial exercises (exercises act) and the preparation work. The final semester is devoted to practical training of students and preparing the dissertation.</p>
 			</div>
 			<div style="clear:both;"></div>			
 	</div>
